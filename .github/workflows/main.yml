@@ -15,7 +15,7 @@ jobs:
     #    run: sudo apt update && sudo apt install -y sed
     - run: |
          npm i
-         npm run server
+         npm run serve
          #sed -i 's/http:\/\/fastapi-vue-api.beginner2020.top/${{secrets.URL}}/g' ./.env.production
          #NODE_OPTIONS=--openssl-legacy-provider npm run build:prod
 
