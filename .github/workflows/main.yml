@@ -16,7 +16,7 @@ jobs:
     - run: |
          npm i
          #sed -i 's/http:\/\/fastapi-vue-api.beginner2020.top/${{secrets.URL}}/g' ./.env.production
-         NODE_OPTIONS=--openssl-legacy-provider npm run serve
+         NODE_OPTIONS=--openssl-legacy-provider npm run build
 
     # 连接到ssh，并且做一个拷贝操作的action
     - name: deploy
