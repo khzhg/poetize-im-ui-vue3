@@ -1,7 +1,4 @@
 on: 
-  push: 
-    branches: 
-      - main # 这里表示push到main分支就会触发流程
   workflow_dispatch:     
 jobs:
   deploy_job:
@@ -27,7 +24,7 @@ jobs:
       uses: easingthemes/ssh-deploy@main
       env:
          # 本地.ssh文件下的私钥id_rsa，存在secrets的PRIVATE_KEY中
-       SSH_PRIVATE_KEY: ${{ secrets.KEY_DEBIAN}}
+       SSH_PRIVATE_KEY: ${{ secrets.KEY}}
           # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
        ARGS: "-avzr --delete" 
           # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
